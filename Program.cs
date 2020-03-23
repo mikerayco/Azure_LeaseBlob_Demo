@@ -21,6 +21,8 @@ namespace LeaseBlobDemo
             //Create instance of the client.
             CloudStorageAccount storageAccount = CloudStorageAccount.Parse(_connectionString);
             CloudBlobClient blobclient = storageAccount.CreateCloudBlobClient();
+
+            //Create a blob container
             CloudBlobContainer cloudBlobContainer = blobclient.GetContainerReference("democontainer");
             await cloudBlobContainer.CreateIfNotExistsAsync();
 
